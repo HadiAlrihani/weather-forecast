@@ -4,4 +4,6 @@
   text-align: center;
 
   @apply font-bold;
+  @apply bg-sky-950;
+  @apply text-white;
 }

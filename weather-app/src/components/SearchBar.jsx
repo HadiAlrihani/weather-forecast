@@ -8,7 +8,7 @@ function SearchBar() {
                 border-white/20 text-white placeholder-white/70 focus:outline-none 
                 focus:ring-2 focus:ring-white/30 shadow-md"
             />
-            <button className="bg-slate-50 rounded-xl text-gray-900 p-3 ml-2">
+            <button className="bg-slate-50 rounded-xl text-gray-500 p-3 ml-2">
                 Search
             </button>
         </div>

@@ -3,7 +3,7 @@ import SearchBar from "./searchBar"
 
 function Header() {
     return (
-        <div className='h-[20vh] bg-sky-950 text-white p-5 flex flex-row'>
+        <div className='h-[20vh] p-5 flex flex-row'>
             <LocationDate />
             <SearchBar />
         </div>
