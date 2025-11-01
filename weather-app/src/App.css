@@ -6,4 +6,5 @@
   @apply font-bold;
   @apply bg-sky-950;
   @apply text-white;
+  @apply max-w-[80vw];
 }
