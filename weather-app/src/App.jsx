@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
       <WeatherToday />
-      <div className='h-[40vh] pt-[2%] pb-[2%] pl-[4%] pr-[4%]'>
+      <div className='h-[40vh] flex items-stretch pl-[4%] pr-[4%] pt-[2%] pb-[2%] box-border'>
         <Forecast />
       </div>
     </>
