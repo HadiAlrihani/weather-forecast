@@ -3,7 +3,6 @@
   /* padding: 2rem; */
   text-align: center;
 
-  @apply font-bold;
   @apply bg-sky-950;
   @apply text-white;
   @apply max-w-[80vw];

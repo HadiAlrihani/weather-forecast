@@ -7,7 +7,10 @@ import WeatherToday from './components/WeatherToday'
 import Forecast from './components/Forecast'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [city, setCity] = useState("Calgary");
+  const [weather, setWeather] = useState(null);
+
 
   return (
     <>
