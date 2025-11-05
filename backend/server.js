@@ -39,11 +39,11 @@ app.get("/weather", async (req, res) => {
 
   try {
     // Make a GET request to WeatherAPI
-    const response = await axios.get("https://api.weatherapi.com/v1/current.json", {
+    const response = await axios.get("https://api.weatherapi.com/v1/forecast.json", {
       params: {
         key: apiKey,  // API key from .env
         q: city,      // City name
-        aqi: "no",    // Optional - exclude air quality data
+        days: 6
       },
     });
 
