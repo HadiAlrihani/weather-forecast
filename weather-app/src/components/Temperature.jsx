@@ -1,12 +1,12 @@
-function Temperature() {
+function Temperature({temp, cond}) {
     return (
         <>
             <div className="flex flex-none items-end text-8xl pr-[1%]">
-                <p>15</p>
+                <p>{temp}</p>
             </div>
             <div className=" flex flex-1 flex-col items-start justify-end">
                 <p>°C | °F</p>
-                <p>Partly cloudy</p>
+                <p>{cond}</p>
             </div>
         </>
     )

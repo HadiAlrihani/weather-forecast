@@ -1,11 +1,11 @@
 import sun from '../assets/sun.png'
 
-function ForecastDay() {
+function ForecastDay({day, high, low}) {
     return(
         <div className="flex flex-col flex-1 h-full box-border justify-center">
-            <p>Day</p>
+            <p>{day}</p>
             <img src={sun} alt='Sun' className='max-w-full max-h-full object-contain' />
-            <p>low High</p>
+            <p>{low} {high}</p>
         </div>
     )
 }
