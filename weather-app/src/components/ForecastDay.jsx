@@ -5,7 +5,7 @@ function ForecastDay({day, high, low}) {
         <div className="flex flex-col flex-1 h-full box-border justify-center">
             <p>{day}</p>
             <img src={sun} alt='Sun' className='max-w-full max-h-full object-contain' />
-            <p>{low} {high}</p>
+            <p>{Math.round(low)}° {Math.round(high)}°</p>
         </div>
     )
 }
