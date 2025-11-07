@@ -1,6 +1,3 @@
-//weather icons: https://www.flaticon.com/packs/weather-538
-<a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by All_Dee - Flaticon</a>
-
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import LocationDate from './components/LocationDate'
@@ -15,6 +12,7 @@ function App() {
   const [city, setCity] = useState("Calgary");
   const [weather, setWeather] = useState(null);
   const localTime = useCityClock(weather?.location?.tz_id);
+  const isDay = weather?.current?.is_day === 1
 
   useEffect(() => {
     async function fetchWeather() {
@@ -38,7 +36,11 @@ function App() {
   }, [city]);
 
   return (
-    <>
+    <div className={`min-h-screen transition-all duration-700 ${
+    isDay
+      ? "bg-gradient-to-b from-sky-700 via-sky-600 to-sky-500"
+      : "bg-gradient-to-b from-indigo-900 via-purple-800 to-gray-900"
+  }`}>
       <div className='h-[20vh] pl-[4%] pr-[4%] pt-[4%] flex flex-row'>
         <LocationDate city={weather?.location?.name || "Loading..."} 
                       date={localTime || ""} />
@@ -80,7 +82,7 @@ function App() {
                        icon={`https:${weather?.forecast?.forecastday?.[5]?.day?.condition?.icon.replace("64x64", "128x128")}`} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
