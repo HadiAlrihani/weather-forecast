@@ -1,4 +1,5 @@
 //weather icons: https://www.flaticon.com/packs/weather-538
+<a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by All_Dee - Flaticon</a>
 
 import React, { useEffect, useState } from 'react'
 import './App.css'
@@ -47,30 +48,36 @@ function App() {
         <Temperature temp={Math.round(weather?.current?.temp_c) || "--"} 
                      cond={weather?.current?.condition?.text || "loading"} />
         <TodayDetails feelsLike={weather?.current?.feelslike_c || "--"}
-                      wind={ weather?.current?.wind_kph || "--"} />
+                      wind={ weather?.current?.wind_kph || "--"} 
+                      icon={`https:${weather?.current?.condition?.icon}`} />
       </div>
       <div className='h-[40vh] flex items-stretch pl-[4%] pr-[4%] pt-[2%] pb-[2%] box-border'>
         <div className="flex flex-row flex-1 box-border p-[4%] rounded-xl bg-white/10 
                         backdrop-blur-md border border-white/20 shadow-md">
           <ForecastDay day={weather?.forecast?.forecastday?.[1]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[1]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[1]?.day?.mintemp_c || "--"}/>
+                       low={weather?.forecast?.forecastday?.[1]?.day?.mintemp_c || "--"}
+                       icon={`https:${weather?.forecast?.forecastday?.[1]?.day?.condition?.icon}`} />
 
           <ForecastDay day={weather?.forecast?.forecastday?.[2]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[2]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[2]?.day?.mintemp_c || "--"}/>
+                       low={ weather?.forecast?.forecastday?.[2]?.day?.mintemp_c || "--"}
+                       icon={`https:${weather?.forecast?.forecastday?.[2]?.day?.condition?.icon}`} />
 
           <ForecastDay day={weather?.forecast?.forecastday?.[3]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[3]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[3]?.day?.mintemp_c || "--"}/>
+                       low={ weather?.forecast?.forecastday?.[3]?.day?.mintemp_c || "--"}
+                       icon={`https:${weather?.forecast?.forecastday?.[3]?.day?.condition?.icon}`} />
 
           <ForecastDay day={weather?.forecast?.forecastday?.[4]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[4]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[4]?.day?.mintemp_c || "--"}/>
+                       low={ weather?.forecast?.forecastday?.[4]?.day?.mintemp_c || "--"}
+                       icon={`https:${weather?.forecast?.forecastday?.[4]?.day?.condition?.icon}`} />
 
           <ForecastDay day={weather?.forecast?.forecastday?.[5]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[5]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[5]?.day?.mintemp_c || "--"}/>
+                       low={ weather?.forecast?.forecastday?.[5]?.day?.mintemp_c || "--"}
+                       icon={`https:${weather?.forecast?.forecastday?.[5]?.day?.condition?.icon}`} />
         </div>
       </div>
     </>
