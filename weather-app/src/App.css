@@ -4,5 +4,4 @@
   text-align: center;
 
   @apply text-white;
-  @apply max-w-[80vw];
 }

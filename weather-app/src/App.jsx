@@ -7,6 +7,8 @@ import TodayDetails from "./components/TodayDetails"
 import ForecastDay from './components/ForecastDay'
 import useCityClock from './hooks/useCityClock'
 
+//TODO:space out lows/highs
+
 function App() {
   const [count, setCount] = useState(0);
   const [city, setCity] = useState("Calgary");
@@ -36,7 +38,7 @@ function App() {
   }, [city]);
 
   return (
-    <div className={`min-h-screen transition-all duration-700 ${
+    <div className={` transition-all duration-700 ${
     isDay
       ? "bg-gradient-to-b from-sky-700 via-sky-600 to-sky-500"
       : "bg-gradient-to-b from-indigo-900 via-purple-800 to-gray-900"
