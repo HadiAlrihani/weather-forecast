@@ -7,8 +7,6 @@ import TodayDetails from "./components/TodayDetails"
 import ForecastDay from './components/ForecastDay'
 import useCityClock from './hooks/useCityClock'
 
-//TODO:space out lows/highs
-
 function App() {
   const [count, setCount] = useState(0);
   const [city, setCity] = useState("Calgary");
@@ -19,7 +17,7 @@ function App() {
   useEffect(() => {
     async function fetchWeather() {
       try {
-        const res = await fetch(`http://localhost:5000/weather?city=${city}`);
+        const res = await fetch(`/api/weather?city=${city}`);
         const data = await res.json();
         setWeather(data);
       } catch (error) {
