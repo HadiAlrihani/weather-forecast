@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     res.status(200).json(response.data);
   } catch (error) {
-    console.error("Error fetching weather data:", error.message);
+    console.error("Error fetching weather data:", error.response?.data || error.message);
     res.status(500).json({ error: "Failed to fetch weather data" });
   }
 }
