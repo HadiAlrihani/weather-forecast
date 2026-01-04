@@ -70,16 +70,6 @@ function App() {
                        high={weather?.forecast?.forecastday?.[3]?.day?.maxtemp_c || "--"}
                        low={ weather?.forecast?.forecastday?.[3]?.day?.mintemp_c || "--"}
                        icon={`https:${weather?.forecast?.forecastday?.[3]?.day?.condition?.icon.replace("64x64", "128x128")}`} />
-
-          <ForecastDay day={weather?.forecast?.forecastday?.[4]?.date || "Loading..."}
-                       high={weather?.forecast?.forecastday?.[4]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[4]?.day?.mintemp_c || "--"}
-                       icon={`https:${weather?.forecast?.forecastday?.[4]?.day?.condition?.icon.replace("64x64", "128x128")}`} />
-
-          <ForecastDay day={weather?.forecast?.forecastday?.[5]?.date || "Loading..."}
-                       high={weather?.forecast?.forecastday?.[5]?.day?.maxtemp_c || "--"}
-                       low={ weather?.forecast?.forecastday?.[5]?.day?.mintemp_c || "--"}
-                       icon={`https:${weather?.forecast?.forecastday?.[5]?.day?.condition?.icon.replace("64x64", "128x128")}`} />
         </div>
       </div>
     </div>

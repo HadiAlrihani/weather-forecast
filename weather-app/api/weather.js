@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       params: {
         key: apiKey,
         q: city,
-        days: 6,
+        days: 4,
       },
     });
 
