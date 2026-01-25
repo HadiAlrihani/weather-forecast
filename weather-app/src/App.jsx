@@ -36,13 +36,9 @@ function App() {
   }, [city]);
 
   return (
-    <div className={` transition-all duration-700 ${
-    isDay
-      ? "bg-gradient-to-b from-sky-700 via-sky-600 to-sky-500"
-      : "bg-gradient-to-b from-indigo-900 via-purple-800 to-gray-900"
-  }`}>
+    <div className={`bg-sky-600`}>
       <div className='h-[20vh] pl-[4%] pr-[4%] pt-[4%] flex flex-row'>
-        <LocationDate city={weather?.location?.name || "Loading..."} 
+        <LocationDate city={city || "Loading..."} 
                       date={localTime || ""} />
         <SearchBar setCity={setCity} />
       </div>
