@@ -34,6 +34,7 @@ function SearchBar({ setCity }) {
 
         const data = await res.json();
         setResults(data);
+        console.log(data);
       } catch (err) {
         if (err.name !== "AbortError") { // only log unexpected errors
           console.error(err);
