@@ -11,6 +11,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [city, setCity] = useState("Calgary");
   const [weather, setWeather] = useState(null);
+  const [coordinates, setCoordinates] = useState(null);
   const localTime = useCityClock(weather?.location?.tz_id);
   const isDay = weather?.current?.is_day === 1
 
@@ -40,7 +41,7 @@ function App() {
       <div className='h-[20vh] pl-[4%] pr-[4%] pt-[4%] flex flex-row'>
         <LocationDate city={city || "Loading..."} 
                       date={localTime || ""} />
-        <SearchBar setCity={setCity} />
+        <SearchBar setCity={setCity} setCoordinates={setCoordinates} />
       </div>
       <div className="h-[40vh] flex flex-row pr-[4%] pl-[4%]">
         <Temperature temp={Math.round(weather?.current?.temp_c) || "--"} 

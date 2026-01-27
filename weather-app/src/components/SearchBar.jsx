@@ -53,8 +53,7 @@ function SearchBar({ setCity }) {
   }
 
   function selectCity(item) {
-    var latitiude = item.lat;
-    var longitude = item.lon;
+    setCoordinates({lat: item.lat, lon: item.lon});
     setCity(item.display_place);
   }
 
