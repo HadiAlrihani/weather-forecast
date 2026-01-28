@@ -66,23 +66,23 @@ function SearchBar({ setCity }) {
       placeholder="Enter city name..."
       onChange={handleChange}
       onKeyDown={handleKeyDown}
-      className="h-10 w-64 px-3 py-2 rounded-xl bg-white/10 backdrop-blur-md border 
-        border-white/20 text-white placeholder-white/70 focus:outline-none 
-        focus:ring-2 focus:ring-white/30 shadow-md"
+      className="h-3/5 w-1/2 px-3 bg-slate-100 rounded-xl background-blur-md 
+                shadow-sm shadow-sky-900 dark:bg-sky-900"
     />
 
     {results.length > 0 && (
       <ul
         id="suggestions"
-        className="absolute top-full mt-1 w-64 rounded-xl 
-          bg-black/80 backdrop-blur-md text-white 
-          border border-white/20 shadow-lg z-50"
+        className="absolute top-3/4 w-1/2 rounded-xl bg-slate-100 
+                  background-blur-md shadow-sm shadow-sky-900 z-50
+                  dark:bg-sky-900"
       >
         {results.map((item) => (
           <li
             key={item.place_id}
             onClick={() => selectCity(item)}
-            className="px-3 py-2 hover:bg-white/10 cursor-pointer"
+            className="px-3 py-2 hover:bg-slate-300 rounded-xl cursor-pointer
+                      dark:hover:bg-sky-700"
           >
             {item.display_name}
           </li>

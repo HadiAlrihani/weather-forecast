@@ -37,7 +37,7 @@ function App() {
   }, [city]);
 
   return (
-    <div className={`bg-sky-600`}>
+    <div className={`bg-slate-50 dark:bg-sky-950`}>
       <div className='h-[20vh] pl-[4%] pr-[4%] pt-[4%] flex flex-row'>
         <LocationDate city={city || "Loading..."} 
                       date={localTime || ""} />
@@ -51,8 +51,9 @@ function App() {
                       icon={`https:${weather?.current?.condition?.icon.replace("64x64", "128x128")}`} />
       </div>
       <div className='h-[40vh] flex items-stretch pl-[4%] pr-[4%] pt-[2%] pb-[2%] box-border'>
-        <div className="flex flex-row flex-1 box-border p-[4%] rounded-xl bg-white/10 
-                        backdrop-blur-md border border-white/20 shadow-md">
+        <div className="flex flex-row flex-1 box-border p-[4%] rounded-xl bg-slate-100 
+                        backdrop-blur-md shadow-md shadow-sky-900
+                        dark:bg-sky-900">
           <ForecastDay day={weather?.forecast?.forecastday?.[1]?.date || "Loading..."}
                        high={weather?.forecast?.forecastday?.[1]?.day?.maxtemp_c || "--"}
                        low={weather?.forecast?.forecastday?.[1]?.day?.mintemp_c || "--"}
