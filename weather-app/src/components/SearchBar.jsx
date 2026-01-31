@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-function SearchBar({ setCity }) {
+function SearchBar({ setLocation, setCoordinates }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const timeoutRef = useRef(null);
@@ -34,7 +34,6 @@ function SearchBar({ setCity }) {
 
         const data = await res.json();
         setResults(data);
-        console.log(data);
       } catch (err) {
         if (err.name !== "AbortError") { // only log unexpected errors
           console.error(err);
@@ -54,7 +53,7 @@ function SearchBar({ setCity }) {
 
   function selectCity(item) {
     setCoordinates({lat: item.lat, lon: item.lon});
-    setCity(item.display_place);
+    setLocation({city: item.address.name, country: item.address.country});
   }
 
   return (
