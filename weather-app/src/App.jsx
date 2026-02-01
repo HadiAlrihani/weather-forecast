@@ -5,7 +5,6 @@ import SearchBar from './components/SearchBar'
 import Temperature from "./components/Temperature"
 import TodayDetails from "./components/TodayDetails"
 import ForecastDay from './components/ForecastDay'
-import useCityClock from './hooks/useCityClock'
 
 function App() {
   const [location, setLocation] = useState({city: "Calgary", country: "Canada"});

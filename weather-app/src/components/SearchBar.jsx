@@ -42,18 +42,27 @@ function SearchBar({ setLocation, setCoordinates }) {
     }, 300); // debounce delay
   };
 
+  // on enter, retrieve the top suggestion from the list
   function handleKeyDown(e) {
     if (e.key === "Enter") {
-      if (input.trim() != "") {
-        setCity(input.trim()); // updates city in App.jsx
+      if (results.length > 0) {
+        selectLocation(results[0]); // update location to retrieve weather data
         setInput(""); // clear the search bar
+
       }
     };
   }
 
-  function selectCity(item) {
-    setCoordinates({lat: item.lat, lon: item.lon});
-    setLocation({city: item.address.name, country: item.address.country});
+  function selectLocation(item) {
+    setCoordinates({
+      lat: item.lat, 
+      lon: item.lon});
+    
+    setLocation({
+      city: item.address.name, 
+      country: item.address.country});
+    
+    setResults([]); //clear dropdown after selection is made
   }
 
   return (
@@ -79,7 +88,7 @@ function SearchBar({ setLocation, setCoordinates }) {
         {results.map((item) => (
           <li
             key={item.place_id}
-            onClick={() => selectCity(item)}
+            onClick={() => selectLocation(item)}
             className="px-3 py-2 hover:bg-slate-300 rounded-xl cursor-pointer
                       dark:hover:bg-sky-700"
           >
