@@ -74,21 +74,24 @@ function SearchBar({ setLocation, setCoordinates }) {
       placeholder="Enter city name..."
       onChange={handleChange}
       onKeyDown={handleKeyDown}
-      className="h-3/5 w-1/2 px-3 bg-slate-100 rounded-xl background-blur-md 
+      className="h-3/5 w-1/2 px-3 bg-slate-300 rounded-xl background-blur-md 
                 shadow-sm shadow-sky-900 dark:bg-sky-900"
     />
 
     {results.length > 0 && (
       <ul
         id="suggestions"
-        className="absolute top-3/4 w-1/2 rounded-xl bg-slate-100 
+        className="absolute top-3/4 w-1/2 rounded-xl bg-slate-300 
                   background-blur-md shadow-sm shadow-sky-900 z-50
                   dark:bg-sky-900"
       >
         {results.map((item) => (
           <li
             key={item.place_id}
-            onClick={() => selectLocation(item)}
+            onClick={() => {
+              selectLocation(item);
+              setInput(""); // clear search bar
+            }}
             className="px-3 py-2 hover:bg-slate-300 rounded-xl cursor-pointer
                       dark:hover:bg-sky-700"
           >
